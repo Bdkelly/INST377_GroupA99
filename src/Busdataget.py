@@ -9,12 +9,6 @@ def headfind(jsn):
     headers = []
     for i in jsn[0]:
         headers.append(i)
-    '''
-    for i in jsn[page]:
-        for j in i.keys():
-            headers.append(j)
-        break
-    '''
     return headers
 ###
 def filemaker(heads,jsn,page):
@@ -33,7 +27,7 @@ def maker(page,name):
 def main():
     site = {"buses":'https://api.umd.io/v1/bus/routes', 
             "stops":"https://api.umd.io/v1/bus/stops"}
-    helper = {'stopID':'stopIDs":"https://api.umd.io/v1/bus/stops/{stop_ids}',
+    helper = {'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}',
               'routes':'https://api.umd.io/v1/bus/routes/{route_ids}',
               'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'}
     for i in site.keys():
