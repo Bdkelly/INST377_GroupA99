@@ -37,7 +37,7 @@ def main():
     if path.exists(inner + "DataSet.csv") == True: 
         cho = input("This Data Set has already been made would you like to update it? (y/n): ")
         if cho.rstrip().upper() == "Y":
-            maker(site[inner])
+            maker(site,inner)
     else:
         maker(site,inner)
     print("Done")
