@@ -8,6 +8,7 @@ def filemaker(heads,jsn,name,ids):
         writer.writeheader()
         for i in jsn:
             writer.writerow(i)
+        file.close
 ##
 def dataget(ids,page,extra,name):
     for i in ids:
@@ -17,8 +18,8 @@ def dataget(ids,page,extra,name):
     headers = headfind(newj)
     for i in ids:
         out=requests.get(page[name.upper()] + i + extra)
-        jsn = out.json
-        filemaker(headers,newj,name,i)
+        jsn = out.json()
+        filemaker(headers,jsn,name,i)
 ##
 def headfind(jsn):
     headers = []
