@@ -2,6 +2,16 @@
   height: 180px; 
   width: 100%;
 }
+.header {
+  display: flex;
+  background: lightgray;
+  justify-content: center;
+}
+
+.header > h1 {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   display: flex;
@@ -9,6 +19,7 @@
   overflow: hidden;
   justify-content: space-around;
 }
+
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -17,18 +28,32 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  /*border: solid lightslategray;*/
+  width: 33%;
 }
+
+/*Add border to buttons*/
+.homeButton, .aboutButton, .docButton {
+  border: solid darkgrey;
+}
+
+/*Remove border from middle button*/
+.docButton {
+  border-left-style: none;
+  border-right-style: none;
+}
+
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
+
 .main{
   background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction: row;
 }
+
 .input{
   background-color: lightcoral;
   display: flex;
