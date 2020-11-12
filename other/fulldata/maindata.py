@@ -18,7 +18,7 @@ def filemaker(heads,jsn,page):
         for i in jsn:
             writer.writerow(i)
 ###
-def maker(page,name):
+def makersub(page,name):
     out=requests.get(page[name])
     newj = out.json()
     headers = headfind(newj)
@@ -37,9 +37,9 @@ def main():
     if path.exists("data/"+inner + "DataSet.csv") == True: 
         cho = input("This Data Set has already been made would you like to update it? (y/n): ")
         if cho.rstrip().upper() == "Y":
-            maker(site,inner)
+            makersub(site,inner)
     else:
-        maker(site,inner)
+        makersub(site,inner)
     print("Done")
 ###           
 if __name__ == "__main__":
