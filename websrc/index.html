@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Homepage</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/homestyles.css" />
     <!--For Map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -18,13 +18,14 @@
     <div class="header">
         <h1>Bus Helper App</h1>
     </div>
+    <!--For NavBar-->
     <div class="topnav">
         <a class="homeButton" href="/">Home</a>
         <a class="docButton" href="/doc.html">Documentation</a>
         <a class="aboutButton" href="/about.html">About Us</a>
     </div>
-    <div class="main">
-        <div class='input'>
+    <div class="main-block">
+        <div class='block'>
             <form>
                 <ul>
                     <li>
@@ -38,9 +39,9 @@
                 </ul>
             </form>
         </div>
-        <div id="mapid"></div>
+        <div class='block' id="mapid"></div>
     </div>
-    <script src="mapscript.js"></script>
-    <script src='scripts.js'></script>
+    <script src="scripts/mapscript.js"></script>
+    <script src='scripts/datascript.js'></script>
 </body>
 </html>
