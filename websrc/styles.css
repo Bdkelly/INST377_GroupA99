@@ -17,7 +17,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  border: solid lightslategray;
+  /*border: solid lightslategray;*/
 }
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -32,5 +32,4 @@
 .input{
   background-color: lightcoral;
   display: flex;
-  justify-content: left;
 }
