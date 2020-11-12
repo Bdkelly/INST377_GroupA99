@@ -16,16 +16,28 @@
     <div class="header">
         <h1>Bus Helper App</h1>
     </div>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/doc.html">Documentation</a>
+        <a href="/about.html">About Us</a>
+    </div>
     <div class="main">
-        <div class="topnav">
-            <a href="/">Home</a>
-            <a href="/doc.html">Documentation</a>
-            <a href="/about.html">About Us</a>
+        <div class='input'>
+            <form>
+                <ul>
+                    <li>
+                        <label for='start'>Start: </label>
+                        <input type='text' id='start' name='start' placeholder="Where are you starting from?">
+                    </li>
+                    <li>
+                        <label for='Destination'>Destination: </label>
+                        <input type='text' id='dest' name='dest' placeholder="Where would you like to go?">
+                    </li>
+                </ul>
+                <button type="submit" name="button" id="button">Submit</button>
+            </form>
         </div>
-        <div class="busing">
-            <div class='input'></div>
-            <div id="mapid"></div>
-        </div>
+        <div id="mapid"></div>
     </div>
     <script src="scripts.js"></script>
 </body>
