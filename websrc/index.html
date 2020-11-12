@@ -24,14 +24,20 @@
         <a href="/about.html">About Us</a>
     </div>
     <div class="main">
-        <div class="topnav">
-            <a class="homeButton" href="/">Home</a>
-            <a class="docButton" href="/doc.html">Documentation</a>
-            <a class="aboutButton" href="/about.html">About Us</a>
-        </div>
-        <div class="busing">
-            <div class='input'></div>
-            <div id="mapid"></div>
+        <div class='input'>
+            <form>
+                <ul>
+                    <li>
+                        <label for='start'>Start: </label>
+                        <input type='text' id='start' name='start' placeholder="Where are you starting from?">
+                    </li>
+                    <li>
+                        <label for='Destination'>Destination: </label>
+                        <input type='text' id='dest' name='dest' placeholder="Where would you like to go?">
+                    </li>
+                </ul>
+                <button type="submit" name="button" id="button">Submit</button>
+            </form>
         </div>
         <div id="mapid"></div>
     </div>
