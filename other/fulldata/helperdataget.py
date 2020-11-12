@@ -14,12 +14,13 @@ def dataget(ids,page,extra,name):
     for i in ids:
         out=requests.get(page[name.upper()] + i + extra)
         newj = out.json()
+        print(newj)
         break
     headers = headfind(newj)
     for i in ids:
         out=requests.get(page[name.upper()] + i + extra)
-        jsn = out.json()
-        filemaker(headers,jsn,name,i)
+        jsn = out.json
+        filemaker(headers,newj,name,i)
 ##
 def headfind(jsn):
     headers = []
@@ -41,7 +42,7 @@ def heads(support):
 def maker(helper,name):
     extra = ""
     if name.upper() == "STOPID":
-        support = "data\stopsDataSet.csv"
+        support = "data/stopsDataSet.csv"
     elif name.upper() == "ROUTES":
         support = "data/busesDataSet.csv"
     else:
@@ -49,8 +50,8 @@ def maker(helper,name):
         extra = "/schedules"
     ids = heads(support)
     dataget(ids,helper,extra,name)
-    
-    
+
+
 ##
 def main():
     helper = {'STOPID':'https://api.umd.io/v1/bus/stops/',
