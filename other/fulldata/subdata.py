@@ -39,22 +39,18 @@ def dataget(ids,page,extra,name):
     for i in ids:
         out=requests.get(page[name.upper()] + i + extra)
         newj = out.json()
-        print(newj)
         break
     headers = headfind(newj)
+    biglist = [] 
     for i in ids:
-        print(i)
-        out=requests.get(page[name.upper()] + i + extra)
-        jsn = out.json
-       
-        filemaker(headers,newj,name,i)
+        out=requests.get(page[name.upper()] + i + extra).json()
+        biglist.append(out)       
+    filemaker(headers,biglist,name)
 
-def filemaker(heads,jsn,name,ids):
-    with open("data/"+ name + ids + 'DataSet.csv', 'w',errors = 'IGNORE',newline='') as file:
-        writer = csv.DictWriter(file, fieldnames = heads)
-        writer.writeheader()
-        for i in jsn:
-            writer.writerow(i)
+def filemaker(heads,jsn,name):
+    with open("data/"+ name +'DataSet.csv', 'w',errors = 'IGNORE',newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(jsn)
         file.close
 ##
 def headfind(jsn):
