@@ -1,6 +1,7 @@
 import requests
 from os import path
 import csv
+import time
 ##
 def getsubinfo():
     helper = {'STOPID':'https://api.umd.io/v1/bus/stops/',
@@ -20,7 +21,7 @@ def getsubinfo():
     else:
         retyp = input("That input was not correct would you like to try again? (y/n): ")
         if retyp.rstrip().upper() == "Y":
-            main()
+            getsubinfo()
     print("Done")
 
 def maker(helper,name):
@@ -41,16 +42,18 @@ def dataget(ids,page,extra,name):
         newj = out.json()
         break
     headers = headfind(newj)
-    biglist = [] 
+    biglst = []
     for i in ids:
         out=requests.get(page[name.upper()] + i + extra).json()
-        biglist.append(out)       
-    filemaker(headers,biglist,name)
+        biglst.append(out)
+    filemaker(headers,biglst,name)
 
 def filemaker(heads,jsn,name):
     with open("data/"+ name +'DataSet.csv', 'w',errors = 'IGNORE',newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(jsn)
+        writer = csv.DictWriter(file,fieldnames=heads)
+        writer.writeheader()
+        for i in jsn:
+           writer.writerow(i[0])
         file.close
 ##
 def headfind(jsn):
@@ -69,10 +72,6 @@ def heads(support):
         for i in data:
             ids.append(i[heads[0]])
     return ids
-##
-
-
-
 ##
 if __name__ == "__main__":
     getsubinfo()
