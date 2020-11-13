@@ -31,19 +31,9 @@
     </div>
     <div class="main-block">
         <div class='block'>
-            <form>
-                <ul>
-                    <li>
-                        <label for='start'>Start: </label>
-                        <input type='text' id='start' name='start' placeholder="Where are you starting from?">
-                    </li>
-                    <li>
-                        <label for='Destination'>Destination: </label>
-                        <input type='text' id='dest' name='dest' placeholder="Where would you like to go?">
-                    </li>
-                </ul>
-                <button type='button' name='button' id='button' onclick='getlocation()'>Get My Location</button>
-            </form>
+            <button id="stops" onclick="getStops()">Get All Stops</button>
+            <button id="routes">Routes</button>
+            <button id='location' onclick='getlocation()'>Get My Location</button>
         </div>
         <div class='block' id="mapid"></div>
     </div>

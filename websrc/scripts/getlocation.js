@@ -3,7 +3,7 @@ function getlocation(){
         navigator.geolocation.getCurrentPosition(function(position){
             console.log(position.coords.latitude);
             console.log(position.coords.longitude);
-            L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap)
+            L.circleMarker([position.coords.latitude,position.coords.longitude]).setRadius(50).addTo(mymap)
             .bindPopup('Lets Get You Some Where')
             .openPopup();
         });
