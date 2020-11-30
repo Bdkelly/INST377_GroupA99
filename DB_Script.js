@@ -12,11 +12,11 @@ async function foodDataFetcher(URL) {
     return json
 }
 //
-async function maindbs(entry,db){
+async function maindbs(entry,db,name){
     try{
       const New_name = entry.id;
       const New_category = entry.title;
-      await db.exec(`INSERT INTO FoodDB (store_name, store_category) VALUES ("${New_name}","${New_category}")`);
+      await db.exec(`INSERT INTO "${name}" (store_name, store_category) VALUES ("${New_name}","${New_category}")`);
       //console.log(`${store_name} and ${category} inserted`);
     } catch(e) {
           console.log('Error on insertion');
@@ -26,6 +26,7 @@ async function maindbs(entry,db){
 //
   async function dbBus(dbSettings){
     const busURL = 'https://api.umd.io/v1/bus/routes'
+    const name = 'BusID'
     try{
       const db = await open(dbSettings);
       await db.get("PRAGMA foreign_keys = ON")
@@ -36,7 +37,7 @@ async function maindbs(entry,db){
         title TEXT)
         `);
       const data = await DataFetcher(busURL);
-      data.forEach((entry) => { maindbs(entry, db); });
+      data.forEach((entry) => { maindbs(entry, db,name); });
       console.log('Bus Table connected.');
     } catch (e) {
       console.log('Error loading Database.');
@@ -45,6 +46,7 @@ async function maindbs(entry,db){
 }
 async function dbStops(dbSettings){
     const busURL = 'https://api.umd.io/v1/bus/stops'
+    const name = 'StopID'
     try{
       const db = await open(dbSettings);
       await db.get("PRAGMA foreign_keys = ON")
@@ -55,7 +57,7 @@ async function dbStops(dbSettings){
         title TEXT)
         `);
       const data = await DataFetcher(busURL);
-      data.forEach((entry) => { maindbs(entry, db); });
+      data.forEach((entry) => { maindbs(entry, db, name); });
       console.log('Bus Table connected.');
     } catch (e) {
       console.log('Error loading Database.');
