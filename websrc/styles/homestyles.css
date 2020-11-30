@@ -48,15 +48,17 @@
   background-color: #ddd;
   color: black;
 }
-.block{
-  width: 50%;
-  float:left;
-  padding:20px;
-  background-color: lightpink;
-}
+
 .main-block {
   display: flex;
   flex-direction: row;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
+}
+
+.block{
+  width: 50%;
+  float: left;
+  padding: 20px;
+  background-color: lightpink;
 }
