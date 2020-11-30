@@ -6,7 +6,7 @@ const dbSettings = {
   driver: sqlite3.Database,
 }
 //
-async function foodDataFetcher(URL) {
+async function DataFetcher(URL) {
     const data = await fetch(URL);
     const json = data.json()
     return json
