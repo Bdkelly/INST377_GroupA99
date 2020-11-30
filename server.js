@@ -3,9 +3,20 @@
 /* eslint-disable no-unused-vars */
 //import countries from './public/lab_6/countries.js'
 import express from 'express';
+import sqlite3 from 'sqlite3'
 
 const app = express();
 const port = process.env.PORT || 3001;
+const DB_PATH = ':memory:'
+
+const DB = new sqlite3.Database(DB_PATH, function(err){
+  if (err) {
+      console.log(err)
+      return
+  }
+  console.log('Connected to ' + DB_PATH + ' database.')
+});
+DB.close()
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
