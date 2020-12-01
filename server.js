@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import express from 'express';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 import { open } from 'sqlite';
 import fetch from 'node-fetch';
 import sqlite3 from 'sqlite3';
