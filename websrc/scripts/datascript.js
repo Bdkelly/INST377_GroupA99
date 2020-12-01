@@ -22,6 +22,8 @@ fetch(apiStops)
         }
     });
 }
+
+/*/
 function getNear(){
     let bestspot = [];
     let bestspot_Dist = 10000;
@@ -46,7 +48,7 @@ function getNear(){
         console.log(bestspot);
 };
 
-//
+/*/
 function getDis(x1,y1,x2,y2){
     var xDiff = x1 - x2; 
     var yDiff = y1 - y2;

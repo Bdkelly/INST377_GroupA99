@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
-//
+/*/
 const dbSettings = {
   filename:'./tmp/database.db',
   driver: sqlite3.Database,
@@ -89,3 +89,4 @@ app.route('/sql')
     console.log("Here2")
     res.json(results)
   });
+/*/
