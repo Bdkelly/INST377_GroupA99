@@ -7,7 +7,7 @@ import { open } from 'sqlite';
 import fetch from 'node-fetch';
 import sqlite3 from 'sqlite3';
 //
-dotenv.config();
+//dotenv.config();
 //
 const app = express();
 const port = process.env.PORT || 8080;
