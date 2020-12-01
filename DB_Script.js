@@ -49,7 +49,6 @@ async function dbStops(dbSettings){
     const name = 'StopID'
     try{
       const db = await open(dbSettings);
-      await db.get("PRAGMA foreign_keys = ON")
       await db.exec(`
         CREATE TABLE IF NOT EXISTS StopID(
         id_bus INTEGER PRIMARY KEY AUTOINCREMENT,
