@@ -5,7 +5,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { open } from 'sqlite';
 import fetch from 'node-fetch';
-import sqlite3 from 'sqlite3';
+//import sqlite3 from 'sqlite3';
 //
 dotenv.config();
 //
