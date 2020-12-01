@@ -1,11 +1,17 @@
+body {
+  background: black;
+  height: 100%;
+}
+
 .header {
   display: flex;
-  background: black;
+  background: #a22223;
   color: white;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .empty {
@@ -19,9 +25,11 @@
 /* Add a black background color to the top navigation */
 .topnav {
   display: flex;
-  background-color: rgb(201, 152, 18);
+  background-color: #d17c02;
   overflow: hidden;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 /* Style the links inside the navigation bar */
@@ -37,11 +45,11 @@
 
 /*Add border to buttons*/
 .homeButton, .aboutButton, .docButton {
-  border: solid darkgrey;
+  border: solid black 6px;
 }
 
 /*Remove border from middle button*/
-.docButton {
+.homeButton, .aboutButton {
   border-left-style: none;
   border-right-style: none;
 }
@@ -57,9 +65,9 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: black;
   justify-content: center;
-  padding: 10px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
