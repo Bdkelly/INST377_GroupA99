@@ -5,18 +5,30 @@
 
 .header {
   display: flex;
-  background: lightgray;
-  justify-content: center;
+  background: black;
+  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header > h1 {
   font-family: 'PT Sans Caption', sans-serif;
 }
 
+.empty {
+  width: 75px;
+}
+
+.logo {
+  height: 75px;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   display: flex;
-  background-color: #333;
+  background-color: rgb(201, 152, 18);
   overflow: hidden;
   justify-content: space-around;
 }
@@ -50,6 +62,7 @@
 }
 
 .main-block {
+  background-color: red;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -60,5 +73,5 @@
   width: 50%;
   float: left;
   padding: 20px;
-  background-color: lightpink;
+  background-color: red;
 }
