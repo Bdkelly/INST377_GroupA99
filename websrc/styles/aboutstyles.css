@@ -1,11 +1,20 @@
+body {
+  background: #a22223;
+  height: 100%;
+}
+
 .header {
   display: flex;
-  background: black;
+  background: #a22223;
   color: white;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 8px;
+}
+
+.header > h1 {
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 .empty {
@@ -16,10 +25,10 @@
   height: 75px;
 }
 
-/* Add a black background color to the top navigation */
+/* Add an orange background color to the top navigation */
 .topnav {
   display: flex;
-  background-color: rgb(201, 152, 18);
+  background-color: #d17c02;
   overflow: hidden;
   justify-content: space-around;
 }
@@ -37,7 +46,7 @@
 
 /*Add border to buttons*/
 .homeButton, .aboutButton, .docButton {
-  border: solid darkgrey;
+  border: solid #ffac37
 }
 
 /*Remove border from middle button*/
@@ -57,9 +66,9 @@
   flex-direction: row;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: darkgrey;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
