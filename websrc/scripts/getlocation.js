@@ -6,7 +6,7 @@ function getlocation(){
             lat = position.coords.latitude
             long = position.coords.longitude
             L.circleMarker([position.coords.latitude,position.coords.longitude]).setRadius(50).addTo(mymap)
-            .bindPopup('Lets Get You Some Where')
+            .bindPopup('You are here')
             .openPopup();      
             return lat,long      
         });

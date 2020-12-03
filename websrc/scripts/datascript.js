@@ -24,8 +24,10 @@ fetch(apiStops)
 }
 function getNear(){
     let bestspot = [];
+    let new_dist = 0.0
     let bestspot_Dist = 10000;
     let latLong = closefirst();
+    console.log(latLong)
     fetch(apiStops)
     .then(response => response.json())
     .then(data => { 
@@ -33,19 +35,21 @@ function getNear(){
             fetch(apistopidinfo + val.stop_id)
                 .then(info => info.json())
                 .then(data => {
-                    console.log(bestspot_Dist)
                     let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
-                    console.log(new_dist)
                     if (new_dist < bestspot_Dist){
+                        console.log(new_dist)
                         bestspot[0] = data[0].lat;
                         bestspot[1] = data[0].long;
                         bestspot_Dist = new_dist;
-                        makePoint(bestspot)
+                        makePoint(bestspot[0],bestspot[1]) 
                     }else{
                         //Pass
                     }
-                })
+                       
+                });
+                 
             }
+            
         })
 };
 
@@ -63,6 +67,7 @@ function getDistance(lat1,lon1,lat2,lon2){
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
     const d = R * c; // in metres
+    return d
 }
 function closefirst(){
     let latLong = [];
@@ -78,8 +83,9 @@ function closefirst(){
     return latLong
 }
 
-function makePoint(latLong){
-    L.circleMarker([latLong[0],latLong[1]]).setRadius(50).addTo(mymap)
+function makePoint(lat,lon){
+    L.marker([lat,lon]).addTo(mymap)
             .bindPopup('Best Point')
             .openPopup();      
+    getlocation()
 }
