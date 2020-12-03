@@ -16,7 +16,7 @@ fetch(apiStops)
                 .then(info => info.json())
                 .then(data => {
                     L.marker([data[0].lat,data[0].long]).addTo(mymap)
-                    .bindPopup('Lets Get You Some Where')
+                    .bindPopup(`${val.title}`)
                     .openPopup();
                 });
         }
@@ -27,6 +27,7 @@ function getNear(){
     let new_dist = 0.0
     let bestspot_Dist = 10000;
     let latLong = closefirst();
+    let name = ''
     console.log(latLong)
     fetch(apiStops)
     .then(response => response.json())
@@ -41,7 +42,8 @@ function getNear(){
                         bestspot[0] = data[0].lat;
                         bestspot[1] = data[0].long;
                         bestspot_Dist = new_dist;
-                        makePoint(bestspot[0],bestspot[1]) 
+                        name = val.title;
+                        makePoint(bestspot[0],bestspot[1],name) 
                     }else{
                         //Pass
                     }
@@ -83,9 +85,9 @@ function closefirst(){
     return latLong
 }
 
-function makePoint(lat,lon){
+function makePoint(lat,lon,name){
     L.marker([lat,lon]).addTo(mymap)
-            .bindPopup('Best Point')
+            .bindPopup(`Best Point: ${name}`)
             .openPopup();      
     getlocation()
 }
