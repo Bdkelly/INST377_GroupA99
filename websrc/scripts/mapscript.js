@@ -3,8 +3,6 @@ let long = -76.9426
 const mymap = L.map('mapid').setView([latitude,long],15);
 if('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(function(position){
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
         let latitude = position.coords.latitude
         let long = position.coords.longitude
     });

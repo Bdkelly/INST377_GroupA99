@@ -22,56 +22,64 @@ fetch(apiStops)
         }
     });
 }
-
 function getNear(){
     let bestspot = [];
     let bestspot_Dist = 10000;
-    let selfLat,selfLong = getlocation();
+    let latLong = closefirst();
     fetch(apiStops)
     .then(response => response.json())
     .then(data => { 
-        for (const val of data){
+        for (const val of data){ 
             fetch(apistopidinfo + val.stop_id)
                 .then(info => info.json())
                 .then(data => {
-                    let new_dist = getDis(selfLat,selfLong,data[0].lat,data[0].long)
+                    console.log(bestspot_Dist)
+                    let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
                     console.log(new_dist)
                     if (new_dist < bestspot_Dist){
-                        bestspot = [data[0].lat,data[0].long];
+                        bestspot[0] = data[0].lat;
+                        bestspot[1] = data[0].long;
                         bestspot_Dist = new_dist;
+                        makePoint(bestspot)
                     }else{
                         //Pass
-                    }})
+                    }
+                })
             }
         })
-        console.log(bestspot);
 };
 
 
-function getDis(x1,y1,x2,y2){
-    var xDiff = x1 - x2; 
-    var yDiff = y1 - y2;
-    var diff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-    return diff
+function getDistance(lat1,lon1,lat2,lon2){
+    const R = 6371e3; // metres
+    const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+    const φ2 = lat2 * Math.PI/180;
+    const Δφ = (lat2-lat1) * Math.PI/180;
+    const Δλ = (lon2-lon1) * Math.PI/180;
+
+    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+          Math.cos(φ1) * Math.cos(φ2) *
+          Math.sin(Δλ/2) * Math.sin(Δλ/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+    const d = R * c; // in metres
+}
+function closefirst(){
+    let latLong = [];
+    if('geolocation' in navigator){
+        navigator.geolocation.getCurrentPosition(function(position){
+            //console.log(typeof position.coords.latitude)
+            latLong[0] = position.coords.latitude
+            latLong[1] = position.coords.longitude
+        });
+    } else { 
+        /*No get*/
+    }
+    return latLong
 }
 
-
-
-/*/
-document.body.addEventListener('submit', async (e) => {
-    e.preventDefault(); // this stops whatever the browser wanted to do itself.
-    const form = $(e.target).serializeArray();
-    fetch('/sql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form),
-    })
-      .then((fromServer) => fromServer.json())
-      .then((jsonFromServer) => console.log(jsonFromServer))
-      .catch((err) => {
-      console.log(err);
-      });
-  });
-/*/
+function makePoint(latLong){
+    L.circleMarker([latLong[0],latLong[1]]).setRadius(50).addTo(mymap)
+            .bindPopup('Best Point')
+            .openPopup();      
+}
