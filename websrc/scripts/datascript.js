@@ -44,7 +44,7 @@ function getNear(){
                         bestspot[1] = data[0].long;
                         bestspot_Dist = new_dist;
                         name = val.title;
-                        makePoint(bestspot[0],bestspot[1],name) 
+                        makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
                     }else{
                         //Pass
                     }
@@ -82,9 +82,11 @@ function closefirst(){
     return latLong
 }
 
-function makePoint(lat,lon,name){
+function makePoint(lat,lon,mylat,mylon,name){
     L.marker([lat,lon]).addTo(mymap)
             .bindPopup(`Best Point: ${name}`)
             .openPopup();      
+    L.polyline([[lat,lon],[mylat,mylon]]).addTo(mymap).bindPopup(`Best Point: ${name}`)
+    .openPopup();  
     getlocation()
 }
