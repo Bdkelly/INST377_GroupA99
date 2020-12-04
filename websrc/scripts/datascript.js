@@ -8,8 +8,6 @@ const stops = new Array();
 // s
 //
 function getStops() {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     fetch(apiStops)
         .then(response => response.json())
         .then(data => {
@@ -105,104 +103,9 @@ function makePoint(lat, lon, mylat, mylon, name) {
         .openPopup();
     getlocation()
 }
-=======
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            L.marker([data[0].lat, data[0].long]).addTo(mymap)
-              .bindPopup('Lets Get You Some Where')
-              .openPopup();
-          });
-      }
-    });
-}
 
-function getNear() {
-  let bestspot = [];
-  let bestspot_Dist = 10000;
-  let selfLat; const selfLong = getlocation();
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            const new_dist = getDis(selfLat, selfLong, data[0].lat, data[0].long);
-            console.log(new_dist);
-            if (new_dist < bestspot_Dist) {
-              bestspot = [data[0].lat, data[0].long];
-              bestspot_Dist = new_dist;
-            } else {
-              // Pass
-            }
-          });
-      }
-    });
-  console.log(bestspot);
-}
 
-function getDis(x1, y1, x2, y2) {
-  const xDiff = x1 - x2;
-  const yDiff = y1 - y2;
-  const diff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-  return diff;
-}
-
-=======
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            L.marker([data[0].lat, data[0].long]).addTo(mymap)
-              .bindPopup('Lets Get You Some Where')
-              .openPopup();
-          });
-      }
-    });
-}
-
-function getNear() {
-  let bestspot = [];
-  let bestspot_Dist = 10000;
-  let selfLat; const selfLong = getlocation();
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            const new_dist = getDis(selfLat, selfLong, data[0].lat, data[0].long);
-            console.log(new_dist);
-            if (new_dist < bestspot_Dist) {
-              bestspot = [data[0].lat, data[0].long];
-              bestspot_Dist = new_dist;
-            } else {
-              // Pass
-            }
-          });
-      }
-    });
-  console.log(bestspot);
-}
-
-function getDis(x1, y1, x2, y2) {
-  const xDiff = x1 - x2;
-  const yDiff = y1 - y2;
-  const diff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-  return diff;
-}
-
->>>>>>> Stashed changes
-/* /
+/*/
 document.body.addEventListener('submit', async (e) => {
     e.preventDefault(); // this stops whatever the browser wanted to do itself.
     const form = $(e.target).serializeArray();
@@ -219,9 +122,4 @@ document.body.addEventListener('submit', async (e) => {
       console.log(err);
       });
   });
-<<<<<<< Updated upstream
 / */
->>>>>>> Stashed changes
-=======
-/ */
->>>>>>> Stashed changes
