@@ -22,6 +22,7 @@ fetch(apiStops)
         }
     });
 }
+
 function getNear(){
     let bestspot = [];
     let new_dist = 0.0
@@ -47,14 +48,10 @@ function getNear(){
                     }else{
                         //Pass
                     }
-                       
                 });
-                 
             }
-            
         })
-};
-
+    };
 
 function getDistance(lat1,lon1,lat2,lon2){
     const R = 6371e3; // metres
