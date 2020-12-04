@@ -41,7 +41,7 @@ async function getNear() {
     }
     stopCollection().then(data => { 
         Promise.all(data).then(val => {
-            console.log(val.url)
+            console.log(val)
         })
     })
     //array.data.json()
