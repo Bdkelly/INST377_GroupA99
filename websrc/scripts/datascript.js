@@ -39,11 +39,12 @@ async function getNear() {
             })
         )
     }
-    stopCollection().then(data => { 
-        Promise.all(data).then(val => {
-            console.log(val)
+    stopCollection().then(data => {
+        Promise.all(data.map(val => {
+           console.log(val) 
         })
-    })
+        )})
+
     //array.data.json()
     // for (const val of data){ 
     //         fetch(apistopidinfo + val.stop_id)
@@ -123,3 +124,33 @@ document.body.addEventListener('submit', async (e) => {
       });
   });
 / */
+
+
+function getLine(){
+    let bestspot = [];
+    let new_dist = 0.0
+    let bestspot_Dist = 10000;
+    let latLong = closefirst();
+    let name = ''
+    fetch(apiStops)
+    .then(response => response.json())
+    .then(data => { 
+        for (const val of data){ 
+            fetch(apistopidinfo + val.stop_id)
+                .then(info => info.json())
+                .then(data => {
+                    let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
+                    if (new_dist < bestspot_Dist){
+                        console.log(new_dist)
+                        bestspot[0] = data[0].lat;
+                        bestspot[1] = data[0].long;
+                        bestspot_Dist = new_dist;
+                        name = val.title;
+                        makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
+                    }else{
+                        //Pass
+                    }
+                });
+            }
+        })
+    };
