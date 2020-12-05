@@ -41,9 +41,26 @@ async function getNear() {
     }
     stopCollection().then(data => {
         Promise.all(data.map(val => {
-           console.log(val) 
-        })
-        )})
+            const newJ = val.json()
+            newJ.then(function(result){
+                stopLat = result[0].lat
+                stopLon = result[0].long
+                let new_dist = getDistance(latLong[0],latLong[1],stopLat,stopLon)
+                     if (new_dist < bestspot_Dist){
+                         bestspot[0] = stopLat;
+                         bestspot[1] = stopLon;
+                         bestspot_Dist = new_dist;
+                         name = result[0].title;
+                     }else{
+                         //Pass
+                     }
+                if (result[0].stop_id === 'bowiuniv'){
+                    makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name)
+                }
+            })
+        }))
+    })
+    
 
     //array.data.json()
     // for (const val of data){ 
