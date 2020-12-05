@@ -51,7 +51,7 @@ body {
 
 /*Add border to buttons*/
 .homeButton, .aboutButton, .docButton {
-  border: solid #ffac37;;
+  border: solid #ffac37;
 }
 
 /*Remove border from middle button*/
@@ -67,18 +67,30 @@ body {
 }
 
 .main-block {
-  background-color: red;
+  background-color: darkgrey;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  align-items: center;
 }
 
 .block{
-  width: 50%;
+  width: 100%;
   float: left;
-  padding: 20px;
-  background-color: red;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-around;
+}
+
+#mapid {
+  width: 10%;
+}
+
+.block button {
+  border-radius: 50px;
 }
 
 @media only screen and (max-width: 1000px) {
