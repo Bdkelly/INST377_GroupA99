@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   display: flex;
   background: #a22223;
@@ -13,70 +17,70 @@ body {
   padding: 8px;
 }
   
-  .header > h1 {
-    font-family: 'PT Sans Caption', sans-serif;
-  }
+.header > h1 {
+  font-family: 'PT Sans Caption', sans-serif;
+}
 
-  .empty {
-    width: 75px;
-  }
+.empty {
+  width: 75px;
+}
   
-  .logo {
-    height: 75px;
-  }
+.logo {
+  height: 75px;
+}
   
 /* Add an orange background color to the top navigation */
-  .topnav {
-    display: flex;
-    background-color: #d17c02;
-    overflow: hidden;
-    justify-content: space-around;
-  }
+.topnav {
+  display: flex;
+  background-color: #d17c02;
+  overflow: hidden;
+  justify-content: space-around;
+}
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    width: 33%;
-  }
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 33%;
+}
   
-  /*Add border to buttons*/
-  .homeButton, .aboutButton, .docButton {
-    border: solid #ffac37;;
-  }
+/*Add border to buttons*/
+.homeButton, .aboutButton, .docButton {
+  border: solid #ffac37;
+}
   
-  /*Remove border from middle button*/
-  .docButton {
-    border-left-style: none;
-    border-right-style: none;
-  }
+/*Remove border from middle button*/
+.docButton {
+  border-left-style: none;
+  border-right-style: none;
+}
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: white;
-    color: black;
-  }
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
 
-  .main-block {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    justify-content: center;
-    padding: 5px;
-    box-sizing: border-box;
-  }
+.main-block {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
 
-  .block{
-    width: 100%;
-    padding: 10px;
-    background-color: white;
-  }
+.block{
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+}
 
 @media only screen and (max-width: 1000px) {
   .header {

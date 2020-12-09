@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .main-block #mapid { 
   height: 600px; 
   width: 100%;

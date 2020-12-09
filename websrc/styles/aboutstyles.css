@@ -3,6 +3,10 @@ html, body {
   height: auto;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   display: flex;
   background: #a22223;
@@ -46,7 +50,7 @@ html, body {
 
 /*Add border to buttons*/
 .homeButton, .aboutButton, .docButton {
-  border: solid #ffac37
+  border: solid #ffac37;
 }
 
 /*Remove border from middle button*/
