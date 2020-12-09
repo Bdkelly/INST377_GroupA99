@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Bus Helper App</title>
-    <link rel="stylesheet" type="text/css" href="styles/homestyles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/homestyles.css" id="theme">
     <!--For Map-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -30,6 +30,7 @@
         <a class="homeButton" href="/">Home</a>
         <a class="docButton" href="/doc.html">Documentation</a>
         <a class="aboutButton" href="/about.html">About Us</a>
+        <button id="themeToggle">Light Mode Enabled</button>
     </div>
     <div class="main-block">
         <div class='block'>
@@ -43,6 +44,7 @@
     <script src='scripts/getlocation.js'></script>
     <script src="scripts/mapscript.js"></script>
     <script src='scripts/datascript.js'></script>
+    <script src='scripts/theme.js'></script>
     <!--For Directions-->
     <!--
     <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=pk.eyJ1IjoiYmRrZWxseSIsImEiOiJja2hmMmp6c2UwbWF4MnhseWZ5NXltZGdkIn0.BvYCNuw0fm5KL8ZTlbtTLw"></script>
