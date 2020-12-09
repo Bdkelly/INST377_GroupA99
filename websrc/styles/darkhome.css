@@ -51,6 +51,7 @@ p {
   text-decoration: none;
   font-size: 17px;
   width: 33%;
+  font-family: 'PT Sans Caption', sans-serif;
 }
   
 /*Add border to buttons*/
@@ -90,6 +91,10 @@ p {
   padding-bottom: 10px;
   padding-top: 10px;
   margin-bottom: 5px;
+}
+
+.block > button{
+  font-family: 'Roboto', sans-serif;
 }
   
 #mapid {
