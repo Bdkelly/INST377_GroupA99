@@ -60,28 +60,6 @@ async function getNear() {
             })
         }))
     })
-    
-
-    //array.data.json()
-    // for (const val of data){ 
-    //         fetch(apistopidinfo + val.stop_id)
-    //             .then(info => info.json())
-    //             .then(data => {
-    //                 let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
-    //                 if (new_dist < bestspot_Dist){
-    //                     console.log(new_dist)
-    //                     bestspot[0] = data[0].lat;
-    //                     bestspot[1] = data[0].long;
-    //                     bestspot_Dist = new_dist;
-    //                     name = val.title;
-    //                     makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
-    //                 }else{
-    //                     //Pass
-    //                 }
-    //             });
-    //         }
-    //     })
-    // };
 }
 
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -141,8 +119,6 @@ document.body.addEventListener('submit', async (e) => {
       });
   });
 / */
-
-
 function getLine(){
     let bestspot = [];
     let new_dist = 0.0
@@ -171,3 +147,7 @@ function getLine(){
             }
         })
     };
+
+function clearMap(){
+    location.reload();
+}
