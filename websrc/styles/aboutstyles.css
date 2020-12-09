@@ -81,6 +81,25 @@ html, body {
   font-family: 'PT Sans Caption', sans-serif;
 }
 
+.groupMembers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.member > img {
+  border: solid black;
+}
+
+.member > p {
+  text-align: center;
+}
+
 @media only screen and (max-width: 1000px) {
   .header {
     font-size: 300%;
