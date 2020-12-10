@@ -3,6 +3,10 @@ html, body {
   height: auto;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   display: flex;
   background: #a22223;
@@ -42,11 +46,12 @@ html, body {
   text-decoration: none;
   font-size: 17px;
   width: 33%;
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 /*Add border to buttons*/
 .homeButton, .aboutButton, .docButton {
-  border: solid #ffac37
+  border: solid #ffac37;
 }
 
 /*Remove border from middle button*/
@@ -57,7 +62,7 @@ html, body {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: white;
   color: black;
 }
 
@@ -65,7 +70,7 @@ html, body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: darkgrey;
+  background-color: black;
   justify-content: center;
   padding: 5px;
   box-sizing: border-box;
@@ -74,11 +79,30 @@ html, body {
 .block{
   width: 100%;
   padding: 10px;
-  background-color: lightgrey;
+  background-color: white;
 }
 
 .block >  h1 {
   font-family: 'PT Sans Caption', sans-serif;
+}
+
+.groupMembers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.member > img {
+  border: solid black;
+}
+
+.member > p {
+  text-align: center;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -112,8 +136,4 @@ html, body {
   .block > p {
     font-size: 300%;
   }
-
-  html, body 
 }
-
-

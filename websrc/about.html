@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>About Us</title>
-        <link rel="stylesheet" type="text/css" href="styles/aboutstyles.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/aboutstyles.css" id="theme">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="header">
@@ -16,6 +16,7 @@
             <a class="homeButton" href="/">Home</a>
             <a class="docButton" href="/doc.html">Documentation</a>
             <a class="aboutButton" href="/about.html">About Us</a>
+            <button id ="themeToggle">Light Mode Enabled</button>
         </div>
         <div class="main-block">
             <div class="block">
@@ -26,7 +27,28 @@
                         design, human-computer interaction, and web applications. Due to our knowledge of these subjects, we feel that we will be able to create an application that gives users a 
                         streamlined, easy-to-use, and enjoyable experience.
                     </p>
-                    <p>Maybe photos of us with our names underneath each picture?</p>
+                    <div class="groupMembers">
+                        <div class="member">
+                            <img src="Jonathan.jpg" height="300", width="200">
+                            <p>Jonathan Ha</p>
+                        </div>
+                        <div class="member">
+                            <img src="Andrew.jpg" height="300", width="200">
+                            <p>Andrew Knox</p>
+                        </div>
+                        <div class="member">
+                            <img src="Ujwal.png" height="300", width="200">
+                            <p>Ujwal Gupta</p>
+                        </div> 
+                        <div class="member">
+                            <img src="Ben.jpg" height="300", width="200">
+                            <p>Benjamin Kelly</p>
+                        </div>
+                        <div class="member">
+                            <img src="Chris.jpg" height="300", width="200">
+                            <p>Chris Summers</p>
+                        </div>
+                    </div>
                 <h1>Why?</h1>
                     <p>The main problem we want to address is how confusing it can be to navigate the UMD bus system. Although there are other applications which attempt to solve this problem, some
                         of them can be somewhat unintuitive and difficult to use by users. Due to this, we wanted to build an application that is simple, intuitive, and extremely user-friendly, so
@@ -42,5 +64,6 @@
                     </p>
             </div>
         </div>
+        <script src='scripts/theme.js'></script>
     </body>
 </html>
