@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 .header {
   display: flex;
   background: #a22223;
@@ -13,67 +17,125 @@ body {
   padding: 8px;
 }
   
-  .header > h1 {
-    font-family: 'PT Sans Caption', sans-serif;
-  }
+.header > h1 {
+  font-family: 'PT Sans Caption', sans-serif;
+}
 
-  .empty {
-    width: 75px;
-  }
+.empty {
+  width: 75px;
+}
   
-  .logo {
-    height: 75px;
-  }
+.logo {
+  height: 75px;
+}
   
 /* Add an orange background color to the top navigation */
-  .topnav {
-    display: flex;
-    background-color: #d17c02;
-    overflow: hidden;
-    justify-content: space-around;
-  }
+.topnav {
+  display: flex;
+  background-color: #d17c02;
+  overflow: hidden;
+  justify-content: space-around;
+}
   
-  /* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 33%;
+  font-family: 'PT Sans Caption', sans-serif;
+}
+  
+/*Add border to buttons*/
+.homeButton, .aboutButton, .docButton {
+  border: solid #ffac37;
+}
+  
+/*Remove border from middle button*/
+.docButton {
+  border-left-style: none;
+  border-right-style: none;
+}
+  
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.main-block {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.block{
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+}
+
+.block h1, .block h2 {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
+.docSC1, .docSC2, .docSC4{
+  width: 50%;
+  background-color: black;
+  padding: 8px;
+}
+
+.docSC3{
+  width: 30%;
+  background-color: black;
+  padding: 8px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    font-size: 300%;
+  }
+
   .topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 40px;
     width: 33%;
   }
   
-  /*Add border to buttons*/
-  .homeButton, .aboutButton, .docButton {
-    border: solid #ffac37;;
+
+  .logo {
+    height: 175px;
   }
-  
-  /*Remove border from middle button*/
-  .docButton {
-    border-left-style: none;
-    border-right-style: none;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+
+  .empty {
+    width: 0px;
   }
 
   .main-block {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    background-color: darkgrey;
-    justify-content: center;
-    padding: 5px;
-    box-sizing: border-box;
+    height: 300%;
   }
 
-  .block{
-    width: 100%;
-    padding: 10px;
-    background-color: lightgrey;
+  .block > h1 {
+    font-size: 600%;
   }
+
+  .block > h2 {
+    font-size: 450%;
+  }
+
+  .block > p {
+    font-size: 300%;
+  }
+}

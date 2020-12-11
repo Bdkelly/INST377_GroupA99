@@ -8,8 +8,6 @@ const stops = new Array();
 // s
 //
 function getStops() {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     fetch(apiStops)
         .then(response => response.json())
         .then(data => {
@@ -41,31 +39,27 @@ async function getNear() {
             })
         )
     }
-    stopCollection().then(data => { 
-        Promise.all(data).then(val => {
-            
-        })
+    stopCollection().then(data => {
+        Promise.all(data.map(val => {
+            const newJ = val.json()
+            newJ.then(function(result){
+                stopLat = result[0].lat
+                stopLon = result[0].long
+                let new_dist = getDistance(latLong[0],latLong[1],stopLat,stopLon)
+                     if (new_dist < bestspot_Dist){
+                         bestspot[0] = stopLat;
+                         bestspot[1] = stopLon;
+                         bestspot_Dist = new_dist;
+                         name = result[0].title;
+                     }else{
+                         //Pass
+                     }
+                if (result[0].stop_id === 'bowiuniv'){
+                    makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name)
+                }
+            })
+        }))
     })
-    //array.data.json()
-    // for (const val of data){ 
-    //         fetch(apistopidinfo + val.stop_id)
-    //             .then(info => info.json())
-    //             .then(data => {
-    //                 let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
-    //                 if (new_dist < bestspot_Dist){
-    //                     console.log(new_dist)
-    //                     bestspot[0] = data[0].lat;
-    //                     bestspot[1] = data[0].long;
-    //                     bestspot_Dist = new_dist;
-    //                     name = val.title;
-    //                     makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
-    //                 }else{
-    //                     //Pass
-    //                 }
-    //             });
-    //         }
-    //     })
-    // };
 }
 
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -105,104 +99,9 @@ function makePoint(lat, lon, mylat, mylon, name) {
         .openPopup();
     getlocation()
 }
-=======
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            L.marker([data[0].lat, data[0].long]).addTo(mymap)
-              .bindPopup('Lets Get You Some Where')
-              .openPopup();
-          });
-      }
-    });
-}
 
-function getNear() {
-  let bestspot = [];
-  let bestspot_Dist = 10000;
-  let selfLat; const selfLong = getlocation();
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            const new_dist = getDis(selfLat, selfLong, data[0].lat, data[0].long);
-            console.log(new_dist);
-            if (new_dist < bestspot_Dist) {
-              bestspot = [data[0].lat, data[0].long];
-              bestspot_Dist = new_dist;
-            } else {
-              // Pass
-            }
-          });
-      }
-    });
-  console.log(bestspot);
-}
 
-function getDis(x1, y1, x2, y2) {
-  const xDiff = x1 - x2;
-  const yDiff = y1 - y2;
-  const diff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-  return diff;
-}
-
-=======
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            L.marker([data[0].lat, data[0].long]).addTo(mymap)
-              .bindPopup('Lets Get You Some Where')
-              .openPopup();
-          });
-      }
-    });
-}
-
-function getNear() {
-  let bestspot = [];
-  let bestspot_Dist = 10000;
-  let selfLat; const selfLong = getlocation();
-  fetch(apiStops)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const val of data) {
-        fetch(apistopidinfo + val.stop_id)
-          .then((info) => info.json())
-          .then((data) => {
-            const new_dist = getDis(selfLat, selfLong, data[0].lat, data[0].long);
-            console.log(new_dist);
-            if (new_dist < bestspot_Dist) {
-              bestspot = [data[0].lat, data[0].long];
-              bestspot_Dist = new_dist;
-            } else {
-              // Pass
-            }
-          });
-      }
-    });
-  console.log(bestspot);
-}
-
-function getDis(x1, y1, x2, y2) {
-  const xDiff = x1 - x2;
-  const yDiff = y1 - y2;
-  const diff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-  return diff;
-}
-
->>>>>>> Stashed changes
-/* /
+/*/
 document.body.addEventListener('submit', async (e) => {
     e.preventDefault(); // this stops whatever the browser wanted to do itself.
     const form = $(e.target).serializeArray();
@@ -219,9 +118,36 @@ document.body.addEventListener('submit', async (e) => {
       console.log(err);
       });
   });
-<<<<<<< Updated upstream
 / */
->>>>>>> Stashed changes
-=======
-/ */
->>>>>>> Stashed changes
+function getLine(){
+    let bestspot = [];
+    let new_dist = 0.0
+    let bestspot_Dist = 10000;
+    let latLong = closefirst();
+    let name = ''
+    fetch(apiStops)
+    .then(response => response.json())
+    .then(data => { 
+        for (const val of data){ 
+            fetch(apistopidinfo + val.stop_id)
+                .then(info => info.json())
+                .then(data => {
+                    let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
+                    if (new_dist < bestspot_Dist){
+                        console.log(new_dist)
+                        bestspot[0] = data[0].lat;
+                        bestspot[1] = data[0].long;
+                        bestspot_Dist = new_dist;
+                        name = val.title;
+                        makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
+                    }else{
+                        //Pass
+                    }
+                });
+            }
+        })
+    };
+
+function clearMap(){
+    location.reload();
+}

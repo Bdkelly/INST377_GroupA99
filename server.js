@@ -75,18 +75,18 @@ async function dbBus(dbSettings){
     console.log(e);
 }
 }
-dbBus(dbSettings);
+//dbBus(dbSettings);
 //
-app.route('/sql')
-  .get((req, res) => {
-    console.log('GET request detected');
-  })
-  .post(async (req, res) => {
-    console.log('POST request detected');
-    const db  = await open(dbSettings);
-    console.log('Here1')
-    const results = await query(db);
-    console.log("Here2")
-    res.json(results)
-  });
+// app.route('/sql')
+//   .get((req, res) => {
+//     console.log('GET request detected');
+//   })
+//   .post(async (req, res) => {
+//     console.log('POST request detected');
+//     const db  = await open(dbSettings);
+//     console.log('Here1')
+//     const results = await query(db);
+//     console.log("Here2")
+//     res.json(results)
+//   });
 //

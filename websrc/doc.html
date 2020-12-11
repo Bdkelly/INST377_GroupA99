@@ -2,15 +2,16 @@
 <html>
     <head>
         <title>Documentation</title>
-        <link rel="stylesheet" type="text/css" href="styles/docstyles.css"/>
+        <link rel='icon' href='/theb.png'>
+        <link rel="stylesheet" type="text/css" href="styles/docstyles.css" id="theme">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div class="header">
             <div class="empty"></div>
-            <h1>Bus Helper App</h1>
+            <h1>Documentation</h1>
             <img class="logo" src="umd logo.gif" alt="umd logo">
         </div>
         </div>
@@ -18,14 +19,23 @@
             <a class="homeButton" href="/">Home</a>
             <a class="docButton" href="/doc.html">Documentation</a>
             <a class="aboutButton" href="/about.html">About Us</a>
+            <button id ="themeToggle">Light Mode Enabled</button>
         </div>
         <div class="main-block">
             <div class="block">
                 <h1><u>Documentation / How-to:</u></h1>
                 <h2>Finding a bus stop: </h2>
-                <p>Step 1: Input current data. This can be done by manually typing into the search bar or by using the Use Location Data button</p>
+                <p>Step 1: Allow us to use your location by clicking the Get My Location button.</p>
+                <img class='docSC1' src='homepage get location circled.png' alt='An image of the homepage with the "get location" button circled'>
+                <p>Step 2: Once we have your location, you can click on the Routes button to see which stops are closest to you.</p>
+                <img class='docSC2' src='homepage closest stops circled.png' alt='An image of the homepage with the "closest stops" button circled'>
+                <p>Step 3: You should then see a line showing you the most direct route from your location to the nearest bus stop.</p>
+                <img class='docSC3' src='showing working linePNG.PNG' alt='An image of the homepage with a line from a location to a bus stop'>
+                <p>Step 4: If you want to see all the stops in the College Park area, click on the Get All Stops button.</p>
+                <img class='docSC4' src='homepage get all stops circled.png' alt='An image of the homepage with the "get all stops" button circled'>
+
             </div>
         </div>
-        <script src='scripts/gettingCsv.js'></script>
+        <script src='scripts/theme.js'></script>
     </body>
 </html>
