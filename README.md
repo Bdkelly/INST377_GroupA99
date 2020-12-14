@@ -32,23 +32,36 @@ One possible next step for this application is to add an SQL database so that we
 --------------------
 # Developer Manual
 <h2>Functions:<h2> 
-<h2>getStops():<h2> 
-This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops(val)
-<h2>addStops(val): <h2>
+<h2>getStops;<h2> 
+This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops.
+<h2>addStops; <h2>
 This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
-<h2>getNear():<h2>
+<h2>getNear;<h2>
 This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points
 getDistance(lat1,long1,lat2,long2):
 This function is used to measure the distance between points
-<h2>closefirst():<h2>
+<h2>closefirst;<h2>
 Is used to get the location/coordinates of a user
-<h2>makePoint():<h2>
+<h2>makePoint;<h2>
 Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
-<h2>clearMap():<h2>
+<h2>clearMap;<h2>
 This function reloads the page, and clears the map of the elements added by the user
-<h2>getlocation():<h2>
+<h2>getlocation;<h2>
 The main function used to collect the coordinate position of a user
 
+<h2>Setting up the project<h2>
+Elements needed:
+Node.js
+Leaft.js
+Server Deployment (Heroku)
+
+Node.js installation:
+1. Install the proper version of Node.js for your system using this link: [>Link<](https://nodejs.org/en/download/)
+2. You can now download our current code by either forking our repository, or downloading the code from github itself.
+3. Navigator to the folder when our app code is, and enter the command 'npm install'
+4. Now you are to enter the command 'npm start' to run our application on your local host (127.0.0.1:8080)
+5. Web Deployment: You could also decide to host the application on the web. To do this you will need to have a Heroku,AWS, or anyother webhosting site.
+The webhosting site should then take care of updating the site with the latest code from you github or other repository
 
 --------------------
 # Data for Buses, and Routes:
