@@ -59,11 +59,3 @@ The webhosting site should then take care of updating the site with the latest c
 'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'
 'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'
 'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'
-
---------------------
-# Data for Buses, and Routes:
-"buses":'https://api.umd.io/v1/bus/routes'
-"stops":"https://api.umd.io/v1/bus/stops"
-'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'
-'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'
-'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'
