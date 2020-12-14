@@ -6,7 +6,7 @@
 
 <h2>The problem that this app addresses is how confusing it is to navigate the UMD bus system.</h2>
 
-The audience we are looking to satisfy is anyone who needs to use the UMD Bus system. This could be students who are on campus everyday, or visits needing to find their way around campus for the first time. This app will be very helpful for people who do not know the UMD campus very well but still need to go to a specific building.Identified stakeholders/target browsers
+The audience we are looking to satisfy is anyone who needs to use the UMD Bus system. This could be students who are on campus everyday, or visits needing to find their way around campus for the first time. This app will be very helpful for people who do not know the UMD campus very well but still need to go to a specific building. Identified stakeholders/target browsers
 
 <h2>We chose to work with bus data from the UMD.io dataset.</h2>
 
