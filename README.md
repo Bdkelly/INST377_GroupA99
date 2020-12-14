@@ -54,7 +54,8 @@ Is used to get the location/coordinates of a user
 Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
 <h3>clearMap():<h3>
 This function reloads the page, and clears the map of the elements added by the user
-
+<h3>getlocation():<h3>
+The main function used to collect the coordinate position
 --------------------
 # Data for Buses, and Routes:
 "buses":'https://api.umd.io/v1/bus/routes'
