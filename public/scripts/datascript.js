@@ -7,20 +7,29 @@ const routes = new Array();
 const stops = new Array();
 // s
 //
-function getStops() {
-    fetch(apiStops)
-        .then(response => response.json())
-        .then(data => {
-            for (const val of data) {
-                fetch(apistopidinfo + val.stop_id)
-                    .then(info => info.json())
-                    .then(data => {
-                        L.marker([data[0].lat, data[0].long]).addTo(mymap)
-                            .bindPopup(`${val.title}`)
-                            .openPopup();
-                    });
-            }
-        });
+function getStops(){
+    var firstQuest = new XMLHttpRequest();
+    firstQuest.open('Get',apiStops);
+    firstQuest.onload = function(){
+    var jsondata = JSON.parse(firstQuest.responseText);
+    for (const val of jsondata) {
+        addStops(val)
+        }
+    }
+    firstQuest.send();
+}
+
+function addStops(val){
+    var stopQuest = new XMLHttpRequest();
+    stopQuest.open('Get',apistopidinfo + val.stop_id)
+    stopQuest.onload = function(){
+        var result = JSON.parse(stopQuest.responseText);
+        console.log(result[0].lat, result[0].long)
+        L.marker([result[0].lat, result[0].long]).addTo(mymap)
+            .bindPopup(`${val.title}`)
+            .openPopup();
+    };
+    stopQuest.send();
 }
 
 async function getNear() {
@@ -99,54 +108,6 @@ function makePoint(lat, lon, mylat, mylon, name) {
         .openPopup();
     getlocation()
 }
-
-
-/*/
-document.body.addEventListener('submit', async (e) => {
-    e.preventDefault(); // this stops whatever the browser wanted to do itself.
-    const form = $(e.target).serializeArray();
-    fetch('/sql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form),
-    })
-      .then((fromServer) => fromServer.json())
-      .then((jsonFromServer) => console.log(jsonFromServer))
-      .catch((err) => {
-      console.log(err);
-      });
-  });
-/ */
-function getLine(){
-    let bestspot = [];
-    let new_dist = 0.0
-    let bestspot_Dist = 10000;
-    let latLong = closefirst();
-    let name = ''
-    fetch(apiStops)
-    .then(response => response.json())
-    .then(data => { 
-        for (const val of data){ 
-            fetch(apistopidinfo + val.stop_id)
-                .then(info => info.json())
-                .then(data => {
-                    let new_dist = getDistance(latLong[0],latLong[1],data[0].lat,data[0].long)
-                    if (new_dist < bestspot_Dist){
-                        console.log(new_dist)
-                        bestspot[0] = data[0].lat;
-                        bestspot[1] = data[0].long;
-                        bestspot_Dist = new_dist;
-                        name = val.title;
-                        makePoint(bestspot[0],bestspot[1],latLong[0],latLong[1],name) 
-                    }else{
-                        //Pass
-                    }
-                });
-            }
-        })
-    };
 
 function clearMap(){
     location.reload();
