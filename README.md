@@ -44,13 +44,21 @@ Node.js
 Leaft.js
 Server Deployment (Heroku)
 
-Node.js installation:
+Node.js installation & Web Deployment:
 1. Install the proper version of Node.js for your system using this link: [>Link<](https://nodejs.org/en/download/)
 2. You can now download our current code by either forking our repository, or downloading the code from github itself.
 3. Navigator to the folder when our app code is, and enter the command 'npm install'
 4. Now you are to enter the command 'npm start' to run our application on your local host (127.0.0.1:8080)
-5. Web Deployment: You could also decide to host the application on the web. To do this you will need to have a Heroku,AWS, or anyother webhosting site.
-The webhosting site should then take care of updating the site with the latest code from you github or other repository
+5. Web Deployment: You could also decide to host the application on the web. To do this you will need to have a Heroku,AWS, or any other webhosting site.
+The webhosting site should then take care of updating the site with the latest code from your github or other repository
+
+--------------------
+# API endpoint for Buses, Stops and Routes data:
+"buses":'https://api.umd.io/v1/bus/routes' -> Holds {route_ids}
+"stops":"https://api.umd.io/v1/bus/stops" -> Holds {stop_ids}
+'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'
+'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'
+'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'
 
 --------------------
 # Data for Buses, and Routes:
