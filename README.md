@@ -7,6 +7,8 @@ Chris Summers
 
 [Link to our Project Application](https://inst377group99.herokuapp.com/)
 
+# Developer Manual
+
 <h3>The problem that this app addresses is how confusing it is to navigate the UMD bus system.</h3>
 
 The audience we are looking to satisfy is anyone who needs to use the UMD Bus system. This could be students who are on campus everyday, or visits needing to find their way around campus for the first time. This app will be very helpful for people who do not know the UMD campus very well but still need to go to a specific building.Identified stakeholders/target browsers
