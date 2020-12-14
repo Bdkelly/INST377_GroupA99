@@ -58,7 +58,7 @@ Is a function that takes in the users location, and the closest point from the g
 <h3>clearMap():<h3>
 This function reloads the page, and clears the map of the elements added by the user
 <h3>getlocation():<h3>
-The main function used to collect the coordinate position
+The main function used to collect the coordinate position of a user
 
 
 --------------------
