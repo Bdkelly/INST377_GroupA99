@@ -27,6 +27,10 @@ One of the challenges that we faced was that we originally wanted to provide tur
 
 One possible next step for this application is to add an SQL database so that we do not need to send a request every time a user wanted to use a feature. We could also allow users to add custom points, and add the ability to instruct users which buses to get on or off and at which stops. Lastly, we could show all available routes from the person's location to the bus stop on the map.
 
+<h3>Description of target browsers<h3>
+
+For our desktop version of the application, we focused mainly on compatibility with the Google Chrome browser, however, it should work with most modern web browsers including but not limited to Microsoft Edge, Mozilla Firefox, and Opera. For the mobile version of our application, we did not focus on a single mobile operating system, instead we used multiple instances of @media in order to make the application compatible with as many devices as possible. Such devices include those belonging to iOS such as the iPad and different variations of the iPhone, Android devices such as the Galaxy Fold and Pixel 2, as well as other devices like the Galaxy Duo.
+
 
 Documentation needs to be written in Markdown (MD) files, nicely formatted (they are legible on Github in a way PDFs are not on Canvas)
 
