@@ -1,12 +1,10 @@
+//URL link for API data
 const apiBuses = 'https://api.umd.io/v1/bus/routes';
 const apiStops = 'https://api.umd.io/v1/bus/stops';
 const apirouteinfo = 'https://api.umd.io/v1/bus/routes/';/* route id */
 const apistopidinfo = 'https://api.umd.io/v1/bus/stops/';/* stop id */
 const apitimesinfo = 'https://api.umd.io/v1/bus/routes/{route_id}/schedules';
-const routes = new Array();
-const stops = new Array();
-// s
-//
+//Gets All stop location with the API
 function getStops(){
     var firstQuest = new XMLHttpRequest();
     firstQuest.open('Get',apiStops);
@@ -18,7 +16,7 @@ function getStops(){
     }
     firstQuest.send();
 }
-
+//Adds to getStops function
 function addStops(val){
     var stopQuest = new XMLHttpRequest();
     stopQuest.open('Get',apistopidinfo + val.stop_id)
@@ -31,7 +29,7 @@ function addStops(val){
     };
     stopQuest.send();
 }
-
+//Get the closest stop to a person's geolocation
 async function getNear() {
     let bestspot = [];
     let new_dist = 0.0
@@ -70,7 +68,7 @@ async function getNear() {
         }))
     })
 }
-
+//Measures the distance between the user, and a stop
 function getDistance(lat1, lon1, lat2, lon2) {
     const R = 6371e3; // metres
     const φ1 = lat1 * Math.PI / 180; // φ, λ in radians
@@ -86,20 +84,20 @@ function getDistance(lat1, lon1, lat2, lon2) {
     const d = R * c; // in metres
     return d
 }
+//Gets user location for the getNear function
 function closefirst() {
     let latLong = [];
     if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
-            //console.log(typeof position.coords.latitude)
             latLong[0] = position.coords.latitude
             latLong[1] = position.coords.longitude
         });
-    } else {
+    }else {
         /*No get*/
     }
     return latLong
 }
-
+//Add point, and line for getNear function
 function makePoint(lat, lon, mylat, mylon, name) {
     L.marker([lat, lon]).addTo(mymap)
         .bindPopup(`Best Point: ${name}`)
@@ -108,7 +106,7 @@ function makePoint(lat, lon, mylat, mylon, name) {
         .openPopup();
     getlocation()
 }
-
+//Reloads webpage to clear map
 function clearMap(){
     location.reload();
 }
