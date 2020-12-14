@@ -22,11 +22,7 @@ When it comes to the strategies and solutions that we had for this problem, we t
 
 Our final system helps our audience because it helps show where the closest bus stop to their location is. Also, it has the functionality of getting all of the stops in College Park, so if the user wants more than just the stop closest to them and a larger picture, they can do that.
 
-<h2>Challenges faced and impact on final design</h2>
-  
-One of the challenges that we faced was that we originally wanted to provide turn by turn directions from a person's location to the bus stop they wanted to go to. However this was something that we had issues with and were unable to incorporate it into the final design. The impact of this was that we were unable to put this feature into our website. Therefore in order to get turn by turn directions, the person would have to use another app. We also wanted to put a search bar on the map, that would allow someone to type in the location they want to go to and the the website will provide the directions to go that location. This was something that we also had issues with and the impact of not having this feature is that the person would have to use another app as well. We also wanted a navigation bar that displays when pressing a button however we were unable to add this. Therefore the impact of not having this on the final design is that the navigation bar is now on the top part of the screen when viewing it on a computer and in the bottom when viewing it on mobile. 
 
-One possible next step for this application is to add an SQL database so that we do not need to send a request every time a user wanted to use a feature. We could also allow users to add custom points, and add the ability to instruct users which buses to get on or off and at which stops. Lastly, we could show all available routes from the person's location to the bus stop on the map.
 
 
 --------------------
