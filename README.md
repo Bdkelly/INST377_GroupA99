@@ -7,7 +7,7 @@ Chris Summers
 
 [Link to our Project Application](https://inst377group99.herokuapp.com/)
 
-# Developer Manual
+# Link to Developer Manual
 
 <h3>The problem that this app addresses is how confusing it is to navigate the UMD bus system.</h3>
 
