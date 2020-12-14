@@ -37,6 +37,23 @@ Documentation needs to be written in Markdown (MD) files, nicely formatted (they
 Documentation should be included to each team’s final code submission.
 
 Documentation should be saved in your main project directory under "docs"
+--------------------
+# Developer Manual
+Functions: 
+getStops(): 
+This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops(val)
+addStops(val): 
+This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
+getNear():
+This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points
+getDistance(lat1,long1,lat2,long2):
+This function is used to measure the distance between points
+closefirst():
+Is used to get the location/coordinates of a user
+makePoint():
+Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
+clearMap():
+This function reloads the page, and clears the map of the elements added by the user
 
 
 --------------------
