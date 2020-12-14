@@ -31,25 +31,25 @@ One possible next step for this application is to add an SQL database so that we
 
 --------------------
 # Developer Manual
-<h2>Functions:<h2> 
-<h2>getStops;<h2> 
+<h2>Functions:</h2> 
+<h2>getStops;</h2> 
 This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops.
-<h2>addStops; <h2>
+<h2>addStops; </h2>
 This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
-<h2>getNear;<h2>
+<h2>getNear;</h2>
 This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points
 getDistance(lat1,long1,lat2,long2):
 This function is used to measure the distance between points
-<h2>closefirst;<h2>
+<h2>closefirst;</h2>
 Is used to get the location/coordinates of a user
-<h2>makePoint;<h2>
+<h2>makePoint;</h2>
 Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
-<h2>clearMap;<h2>
+<h2>clearMap;</h2>
 This function reloads the page, and clears the map of the elements added by the user
-<h2>getlocation;<h2>
+<h2>getlocation;</h2>
 The main function used to collect the coordinate position of a user
 
-<h2>Setting up the project<h2>
+<h2>Setting up the project</h2>
 Elements needed:
 Node.js
 Leaft.js
