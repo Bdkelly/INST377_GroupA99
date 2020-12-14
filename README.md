@@ -39,26 +39,24 @@ Documentation should be included to each team’s final code submission.
 Documentation should be saved in your main project directory under "docs"
 --------------------
 # Developer Manual
-Functions: 
-getStops(): 
+<h2>Functions:<h2> 
+<h3>getStops():<h3> 
 This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops(val)
-addStops(val): 
+<h3>addStops(val): <h3>
 This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
-getNear():
+<h3>getNear():<h3>
 This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points
 getDistance(lat1,long1,lat2,long2):
 This function is used to measure the distance between points
-closefirst():
+<h3>closefirst():<h3>
 Is used to get the location/coordinates of a user
-makePoint():
+<h3>makePoint():<h3>
 Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
-clearMap():
+<h3>clearMap():<h3>
 This function reloads the page, and clears the map of the elements added by the user
 
-
 --------------------
-Data for Buses, and Routes:
----
+# Data for Buses, and Routes:
 "buses":'https://api.umd.io/v1/bus/routes'
 "stops":"https://api.umd.io/v1/bus/stops"
 'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'
