@@ -1,9 +1,8 @@
 #  INST 377 - Bus Helper App Final Report & Documentation
 
 [Link to our Project Application](https://inst377group99.herokuapp.com/)  
-[Link to User Manual](https://inst377group99.herokuapp.com/doc.html)
-
-# Link to Developer Manual
+[Link to User Manual](https://inst377group99.herokuapp.com/doc.html)  
+[Link to Developer Manual](#developer-manual)  
 
 <h2>The problem that this app addresses is how confusing it is to navigate the UMD bus system.</h2>
 
