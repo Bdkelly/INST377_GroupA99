@@ -1,9 +1,4 @@
 #  INST 377 - Bus Helper App Final Report & Documentation
-Andrew Knox
-Jonathan Ha
-Benjamin Kelly
-Ujwal Gupta
-Chris Summers
 
 [Link to our Project Application](https://inst377group99.herokuapp.com/)  
 [Link to User Manual](https://inst377group99.herokuapp.com/doc.html)
