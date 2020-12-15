@@ -17,21 +17,21 @@ For our desktop version of the application, we focused mainly on compatibility w
 --------------------
 # Developer Manual
 <h2>Functions:</h2> 
-<h3>getStops;</h3> 
+<h3>getStops();</h3> 
 This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops.
-<h3>addStops; </h3>
+<h3>addStops(val); </h3>
 This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
-<h3>getNear;</h3>
+<h3>getNear();</h3>
 This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points.
 <h3>getDistance(lat1,long1,lat2,long2):</h3>
 This function is used to measure the distance between points.
-<h3>closefirst;</h3>
+<h3>closefirst();</h3>
 Is used to get the location/coordinates of a user.
-<h3>makePoint;</h3>
+<h3>makePoint(lat, lon, mylat, mylon, name);</h3>
 Is a function that takes in the users location, and the closest point from the getNear(). These points are then user to draw a line from the close point to the users location.
-<h3>clearMap;</h3>
+<h3>clearMap();</h3>
 This function reloads the page, and clears the map of the elements added by the user.
-<h3>getlocation;</h3>
+<h3>getlocation();</h3>
 The main function used to collect the coordinate position of a user.
 
 <h2>Setting up the project</h2>
