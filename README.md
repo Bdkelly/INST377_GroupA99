@@ -56,8 +56,10 @@ The webhosting site should then take care of updating the site with the latest c
 </ul>
 --------------------
 # API endpoint for Buses, Stops and Routes data:
-1."buses":'https://api.umd.io/v1/bus/routes' -> Holds {route_ids}
-2."stops":"https://api.umd.io/v1/bus/stops" -> Holds {stop_ids}
-3.'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'
-4.'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'
-5.'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'
+<ul>
+  <li>'buses':'https://api.umd.io/v1/bus/routes' -> Holds {route_ids}</li>
+  <li>'stops':'https://api.umd.io/v1/bus/stops' -> Holds {stop_ids}</li>
+  <li>'stopID':'https://api.umd.io/v1/bus/stops/{stop_ids}'</li>
+  <li>'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'</li>
+  <li>'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'</li>
+</ul>
