@@ -21,7 +21,7 @@ For our desktop version of the application, we focused mainly on compatibility w
 This functions takes in no values but using Ajax / XMLHttpRequest it request data from the umd.io/bus API. Then pushing the returned data to the next function the addStops.
 <h3>addStops(val); </h3>
 This function takes in the val data from the getStops function. Val is stops json element from the umd.io/bus API. We can then us that data to get the coordinates of each of the stops in the UMD bus system.
-<h3>getNear;</h3>
+<h3>getNear();</h3>
 This function uses to collect data used to help a user find the closest bus stop to them. Taking similar elements to the getStops function it collects the coordinates of stops, and the user it loops thru each stop, and measures the distance between these points.
 getDistance(lat1,long1,lat2,long2):
 This function is used to measure the distance between points.
