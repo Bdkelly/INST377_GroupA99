@@ -63,3 +63,12 @@ The webhosting site should then take care of updating the site with the latest c
   <li>'routes':'https://api.umd.io/v1/bus/routes/{route_ids}'</li>
   <li>'times':'https://api.umd.io/v1/bus/routes/{route_id}/schedules'</li>
 </ul>
+<h3>API Get Requests</h3>
+<p>Our project uses only API GET request recviveing stop, and route information from the our API</p>
+<p>Below lists what each API GET returns, and how it should be called</p>
+<ul>
+  <li>'https://api.umd.io/v1/bus/routes' -> Will return all of the Bus route names/titles in json, or near json format these names must be used in future API calls</li>
+  <li>'https://api.umd.io/v1/bus/stops' -> Will return all stop names, and title in json, or near json format these names must be used in future API calls</li>
+  <li>'https://api.umd.io/v1/bus/stops/{stop_ids}' -> Will return JSON data of the stop specified using the stop_id from the 'https://api.umd.io/v1/bus/stops'</li>
+  <li>'https://api.umd.io/v1/bus/routes/{routes_ids}' -> Will return JSON data of the stop specified using the route_id from the 'https://api.umd.io/v1/bus/routes'</li>
+  <li>'https://api.umd.io/v1/bus/routes/{routes_ids}/schedules' -> Will return JSON data of the bus schedule for the route using the route_id from then 'https://api.umd.io/v1/bus/routes'</li>
