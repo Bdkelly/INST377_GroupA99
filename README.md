@@ -43,11 +43,17 @@ Elements needed:
 Node.js installation & Web Deployment:
 1. Install the proper version of Node.js for your system using this link: [>Link<](https://nodejs.org/en/download/)
 2. You can now download our current code by either forking our repository, or downloading the code from github itself.
-3. Navigator to the folder when our app code is, and enter the command 'npm install'.
+3. Navigate to the folder where the application code is stored, and enter the command 'npm install'.
 4. Now you are to enter the command 'npm start' to run our application on your local host (127.0.0.1:8080).
 5. Web Deployment: You could also decide to host the application on the web. To do this you will need to have a Heroku, AWS, or any other webhosting site.
 The webhosting site should then take care of updating the site with the latest code from your github or other repository.
 
+<h2>Application Roadmap</h2>
+<ul>
+  <li>Add an SQL database so that we do not need to send a request every time a user wanted to use a feature.</li>
+  <li>Allow users to add custom points, and add the ability for the application to instruct users which buses to get on or off, and at which stops.</li>
+  <li>Show all available routes from the person’s location to the bus stop on the map </li>
+</ul>
 --------------------
 # API endpoint for Buses, Stops and Routes data:
 1."buses":'https://api.umd.io/v1/bus/routes' -> Holds {route_ids}
