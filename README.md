@@ -54,8 +54,8 @@ The webhosting site should then take care of updating the site with the latest c
   <li>Allow users to add custom points, and add the ability for the application to instruct users which buses to get on or off, and at which stops.</li>
   <li>Show all available routes from the person’s location to the bus stop on the map </li>
 </ul>
---------------------
-# API endpoint for Buses, Stops and Routes data:
+
+<h2>API endpoint for Buses, Stops and Routes data:</h2>
 <ul>
   <li>'buses':'https://api.umd.io/v1/bus/routes' -> Holds {route_ids}</li>
   <li>'stops':'https://api.umd.io/v1/bus/stops' -> Holds {stop_ids}</li>
